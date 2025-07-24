@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface WonderCardProps {
@@ -7,11 +8,13 @@ interface WonderCardProps {
   image: string;
   year?: string;
   civilization?: string;
+  wonderId: string;
 }
 
-const WonderCard = ({ title, location, description, image, year, civilization }: WonderCardProps) => {
+const WonderCard = ({ title, location, description, image, year, civilization, wonderId }: WonderCardProps) => {
   return (
-    <Card className="wonder-card group cursor-pointer overflow-hidden bg-gradient-wonder border-border/50">
+    <Link to={`/wonder/${wonderId}`} className="block">
+      <Card className="wonder-card group cursor-pointer overflow-hidden bg-gradient-wonder border-border/50">
       <div className="relative overflow-hidden">
         <img 
           src={image} 
@@ -33,6 +36,7 @@ const WonderCard = ({ title, location, description, image, year, civilization }:
         <p className="text-sm text-foreground/80 leading-relaxed">{description}</p>
       </CardContent>
     </Card>
+    </Link>
   );
 };
 

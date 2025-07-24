@@ -14,7 +14,8 @@ const wonders = [
     description: "A magnificent fortification system stretching over 13,000 miles, built over centuries to protect Chinese states from invasions. This architectural marvel showcases incredible engineering and human determination.",
     image: greatWallImage,
     year: "7th century BC - 1644 AD",
-    civilization: "Chinese Dynasties"
+    civilization: "Chinese Dynasties",
+    wonderId: "great-wall"
   },
   {
     title: "Petra",
@@ -22,7 +23,8 @@ const wonders = [
     description: "The Rose City carved into pink sandstone cliffs by the Nabataeans. This archaeological wonder features intricate facades and sophisticated water management systems that enabled a thriving desert civilization.",
     image: petraImage,
     year: "312 BC",
-    civilization: "Nabataean Kingdom"
+    civilization: "Nabataean Kingdom",
+    wonderId: "petra"
   },
   {
     title: "Christ the Redeemer",
@@ -30,7 +32,8 @@ const wonders = [
     description: "An iconic Art Deco statue overlooking Rio de Janeiro from atop Corcovado mountain. Standing 98 feet tall, this symbol of Christianity and Brazilian culture welcomes millions of visitors annually.",
     image: christRedeemerImage,
     year: "1931 AD",
-    civilization: "Modern Brazil"
+    civilization: "Modern Brazil",
+    wonderId: "christ-redeemer"
   },
   {
     title: "Machu Picchu",
@@ -38,7 +41,8 @@ const wonders = [
     description: "The Lost City of the Incas, perched high in the Andes Mountains. This perfectly preserved citadel showcases sophisticated Incan architecture and agricultural terraces in breathtaking mountain scenery.",
     image: machuPicchuImage,
     year: "1450 AD",
-    civilization: "Inca Empire"
+    civilization: "Inca Empire",
+    wonderId: "machu-picchu"
   },
   {
     title: "Chichen Itza",
@@ -46,7 +50,8 @@ const wonders = [
     description: "A large pre-Columbian archaeological site featuring the magnificent El Castillo pyramid. This Mayan city demonstrates advanced astronomical knowledge and serves as a testament to Mayan civilization.",
     image: chichenItzaImage,
     year: "600-1200 AD",
-    civilization: "Maya Civilization"
+    civilization: "Maya Civilization",
+    wonderId: "chichen-itza"
   },
   {
     title: "Roman Colosseum",
@@ -54,7 +59,8 @@ const wonders = [
     description: "The largest amphitheater ever built, this iconic symbol of Imperial Rome could hold 80,000 spectators. Its innovative architecture and engineering continue to influence modern stadium design.",
     image: colosseumImage,
     year: "72-80 AD",
-    civilization: "Roman Empire"
+    civilization: "Roman Empire",
+    wonderId: "colosseum"
   },
   {
     title: "Taj Mahal",
@@ -62,7 +68,8 @@ const wonders = [
     description: "An ivory-white marble mausoleum built by Mughal emperor Shah Jahan for his beloved wife. This symbol of eternal love combines Persian, Islamic, and Indian architectural styles in perfect harmony.",
     image: tajMahalImage,
     year: "1632-1653 AD",
-    civilization: "Mughal Empire"
+    civilization: "Mughal Empire",
+    wonderId: "taj-mahal"
   }
 ];
 
