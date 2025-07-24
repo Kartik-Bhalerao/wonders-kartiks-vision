@@ -8,35 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Ancient-inspired color palette */
+    --background: 20 15% 97%;
+    --foreground: 25 40% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 30 25% 96%;
+    --card-foreground: 25 40% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 30 25% 96%;
+    --popover-foreground: 25 40% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Golden hour primary inspired by ancient gold */
+    --primary: 45 85% 55%;
+    --primary-foreground: 25 40% 15%;
+    --primary-glow: 45 90% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm stone secondary */
+    --secondary: 35 25% 85%;
+    --secondary-foreground: 25 40% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Soft earth muted tones */
+    --muted: 35 20% 90%;
+    --muted-foreground: 25 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Ancient bronze accent */
+    --accent: 30 45% 65%;
+    --accent-foreground: 25 40% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 85%;
+    --input: 35 20% 90%;
+    --ring: 45 85% 55%;
 
-    --radius: 0.5rem;
+    /* Design system gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(45 85% 55%), hsl(30 75% 60%), hsl(25 65% 50%));
+    --gradient-wonder: linear-gradient(180deg, hsl(35 25% 96%), hsl(35 20% 90%));
+    --gradient-overlay: linear-gradient(135deg, hsl(25 40% 15% / 0.8), hsl(45 85% 55% / 0.2));
+
+    /* Shadows with golden glow */
+    --shadow-glow: 0 10px 40px hsl(45 85% 55% / 0.3);
+    --shadow-elegant: 0 20px 60px hsl(25 40% 15% / 0.1);
+    --shadow-card: 0 8px 32px hsl(35 20% 75% / 0.3);
+
+    /* Animation variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +121,82 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Wonder card hover effects */
+  .wonder-card {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .wonder-card:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Hero text gradient */
+  .hero-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Parallax scroll effect */
+  .parallax {
+    transform-style: preserve-3d;
+    transition: var(--transition-smooth);
+  }
+
+  /* Golden divider */
+  .golden-divider {
+    background: var(--gradient-hero);
+    height: 2px;
+    width: 100px;
+    margin: 2rem auto;
+    border-radius: 1px;
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Fade in on scroll */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Text shimmer effect */
+  .shimmer {
+    background: linear-gradient(90deg, 
+      hsl(var(--foreground)) 25%, 
+      hsl(var(--primary)) 50%, 
+      hsl(var(--foreground)) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 }
